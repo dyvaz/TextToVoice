@@ -1,17 +1,17 @@
 # TextToVoice
 
-O projeto **TextToVoice** È uma aplicaÁ„o web desenvolvida com Next.js e TypeScript que utiliza a API do ElevenLabs para transformar texto em voz. A aplicaÁ„o permite listar diferentes vozes, ouvir amostras de cada voz e gerar ·udio a partir de um texto digitado pelo usu·rio.
+O projeto **TextToVoice** √© uma aplica√ß√£o web desenvolvida com Next.js e TypeScript que utiliza a API do ElevenLabs para transformar texto em voz. A aplica√ß√£o permite listar diferentes vozes, ouvir amostras de cada voz e gerar √°udio a partir de um texto digitado pelo usu√°rio.
 
 ## Funcionalidades
 
-- **Listar Vozes:** Exibe uma lista de vozes disponÌveis com opÁıes para ouvir uma amostra de cada uma.
-- **Gerar ¡udio:** Permite ao usu·rio digitar um texto e ouvir como ele È falado em diferentes vozes.
-- **Armazenamento de ¡udio:** Os arquivos de ·udio gerados s„o armazenados e gerenciados para reproduÁ„o.
+- **Listar Vozes:** Exibe uma lista de vozes dispon√≠veis com op√ß√µes para ouvir uma amostra de cada uma.
+- **Gerar √°udio:** Permite ao usu√°rio digitar um texto e ouvir como ele √© falado em diferentes vozes.
+- **Armazenamento de √°udio:** Os arquivos de √°udio gerados s√£o armazenados e gerenciados para reprodu√ß√£o.
 
 ## Tecnologias
 
-- **Next.js:** Framework React para renderizaÁ„o do lado do servidor e geraÁ„o de sites est·ticos.
-- **TypeScript:** Linguagem de programaÁ„o que adiciona tipagem est·tica ao JavaScript.
-- **API do ElevenLabs:** ServiÁo de "texto para voz" que oferece uma variedade de vozes e opÁıes de personalizaÁ„o.
-- **Ant-Design / Mantine:** Pacote visual para a interface de usu·rio (escolha um dos pacotes).
+- **Next.js:** Framework React para renderiza√ß√£o do lado do servidor e gera√ß√£o de sites est√°ticos.
+- **TypeScript:** Linguagem de programa√ß√£o que adiciona tipagem est√°ica ao JavaScript.
+- **API do ElevenLabs:** Servi√ßo de "texto para voz" que oferece uma variedade de vozes e op√ß√µes de personaliza√ß√£o.
+- **Ant-Design / Mantine:** Pacote visual para a interface de usu√°rio (escolha um dos pacotes).
 
