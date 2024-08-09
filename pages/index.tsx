@@ -23,6 +23,7 @@ const Home = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [loadingVoiceId, setLoadingVoiceId] = useState<string | null>(null);
   const [audioPreviewPlaying, setAudioPreviewPlaying] = useState<string | null>(null);
+  const [isPlaying, setIsPlaying ] = useState<boolean>(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const theme = useMantineTheme();
 
@@ -59,13 +60,16 @@ const Home = () => {
       const data = await response.json();
       const audio = new Audio(data.filePath);
       audio.play();
+      setIsPlaying(true);
       audio.onended = () => {
         setLoading(false);
         setLoadingVoiceId(null);
+        setIsPlaying(false);
       };
     } catch (error) {
       console.error('Error generating audio:', error);
       setLoading(false);
+      setIsPlaying(false);
     }
   };
 
@@ -100,7 +104,7 @@ const Home = () => {
               <Text mb="xs"><strong>Accent:</strong> {voice.labels.accent}</Text>
               <Text mb="md"><strong>Use Case:</strong> {voice.labels.use_case}</Text>
 
-              <Group spacing="xs" position="center" direction="column">
+              <Group spacing="xs" position="center" >
                 {voice.preview_url && (
                   <Button
                     onClick={() => handlePlayPause(voice)}
@@ -119,15 +123,15 @@ const Home = () => {
                     disabled={loading || voice.voice_id === loadingVoiceId}
                     style={{ transition: 'background-color 0.3s ease', borderRadius: '8px', width: '100%' }}
                     variant="light"
-                    leftIcon={loading && voice.voice_id === loadingVoiceId ? <Loader size="xs" /> : <VolumeUp />}
+                    leftIcon={isPlaying && loading && voice.voice_id === loadingVoiceId ? <Loader size="xs" /> : <VolumeUp />}
                   >
-                    {loading && voice.voice_id === loadingVoiceId ? 'Generating...' : 'Play Text'}
+                    {isPlaying && loading && voice.voice_id === loadingVoiceId ? 'Generating...' : 'Play Text'}
                   </Button>
                 )}
               </Group>
 
               {audioPreviewPlaying === voice.voice_id && voice.preview_url && (
-                <Paper shadow="xs" padding="md" style={{ marginTop: '1rem', borderRadius: '8px' }}>
+                <Paper shadow="xs"  style={{ marginTop: '1rem', borderRadius: '8px' }}>
                   <audio
                     controls
                     autoPlay

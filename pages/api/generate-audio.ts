@@ -32,7 +32,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(200).json({ filePath: url });
   } catch (error) {
-    res.status(500).json({ error: 'Failed to generate audio', details: error.message });
+    res.status(500).json({ error: 'Failed to generate audio', details: error });
   }
 };
 
